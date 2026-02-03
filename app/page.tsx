@@ -17,19 +17,31 @@ export default async function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-primary-800 text-white">
-        <div className="container py-16 md:py-24">
+      <section className="relative text-white">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&h=1080&fit=crop&auto=format,compress"
+            alt="Hero background"
+            className="w-full h-full object-cover"
+          />
+          {/* Black Opacity Overlay */}
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        
+        {/* Content */}
+        <div className="container py-16 md:py-24 relative z-10">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Discover Amazing Products
             </h1>
-            <p className="text-xl md:text-2xl text-primary-100 mb-8">
+            <p className="text-xl md:text-2xl text-gray-200 mb-8">
               Shop our curated collection of electronics, clothing, and home essentials.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/products"
-                className="inline-flex items-center px-6 py-3 bg-white text-primary-700 font-semibold rounded-lg hover:bg-primary-50 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
               >
                 Shop Now
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,7 +50,7 @@ export default async function HomePage() {
               </Link>
               <Link
                 href="#categories"
-                className="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary-700 transition-colors"
+                className="inline-flex items-center px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-gray-900 transition-colors"
               >
                 Browse Categories
               </Link>
